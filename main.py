@@ -17,9 +17,9 @@ bot = commands.Bot(intents= intents, command_prefix='!')
 @bot.event
 async def on_ready():
     print(f'{Fore.BLUE}{bot.user.name}{Style.RESET_ALL} has connected to Discord!')
-    print(f'{Fore.LIGHTMAGENTA_EX}Date & Time \t \
-            {Fore.BLUE}Author {Style.RESET_ALL} \t \
-            {Fore.GREEN} Command {Style.RESET_ALL}')
+    # print(f'{Fore.LIGHTMAGENTA_EX}Date & Time \t \
+    #         {Fore.BLUE}Author {Style.RESET_ALL} \t \
+    #         {Fore.GREEN} Command {Style.RESET_ALL}')
 
 
 
