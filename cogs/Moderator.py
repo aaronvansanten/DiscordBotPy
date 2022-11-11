@@ -3,6 +3,8 @@ from discord.ext import commands
 from datetime import datetime as date
 from colorama import Fore, Style
 
+from misc.badWords import badWords
+
 class Moderator(commands.Cog):
     def __init__(self, bot) -> None:
         self.bot = bot
@@ -12,10 +14,6 @@ class Moderator(commands.Cog):
             {Fore.BLUE}{ctx.message.author.name} {Style.RESET_ALL} \t \
             {Fore.GREEN} {command} {Style.RESET_ALL}')
     
-    @commands.Cog.listener()
-    async def on_message(self):
-        print("Moderator has been loaded")
-
     @commands.command(name="clear", help="Clear a number of messages from the chat", hidden=True)
     @commands.has_role('Manager')
     async def clear(self, ctx, amount:int=None): # Set default value as None
