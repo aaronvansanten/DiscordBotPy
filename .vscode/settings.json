@@ -1,5 +1,8 @@
 {
     "cSpell.enableFiletypes": [
         "!python"
+    ],
+    "python.analysis.extraPaths": [
+        "./misc/Images"
     ]
 }

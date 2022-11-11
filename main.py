@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from discord.ext import commands
 
 from colorama import Fore, Style
-
+from misc.badWords import badWords
 
 # Retrieve the token from the .env file
 load_dotenv()
@@ -17,17 +17,27 @@ bot = commands.Bot(intents= intents, command_prefix='!')
 @bot.event
 async def on_ready():
     print(f'{Fore.BLUE}{bot.user.name}{Style.RESET_ALL} has connected to Discord!')
-    # print(f'{Fore.LIGHTMAGENTA_EX}Date & Time \t \
-    #         {Fore.BLUE}Author {Style.RESET_ALL} \t \
-    #         {Fore.GREEN} Command {Style.RESET_ALL}')
 
+@bot.event
+async def on_member_join(member):
+    await member.channel.send(f"Welcome {member.mention} to the discord server.")
 
+# @bot.event
+# async def on_message(message):
+#     print("A message has been sent" + message.content)
+#     for word in badWords:
+#         if (message.content.lower() == word):
+#             await message.delete()  
+#             await message.channel.send("Please dont use that word here!")
 
 """ Event handeler for not havind the correct permissions."""
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.errors.CheckFailure):
         await ctx.send('You do not have the correct role for this command.')
+    else:
+        print(f'Ignoring exception in command: {Fore.GREEN}{ctx.command}. {Fore.WHITE} The error stated: {Fore.RED} {error}')
+        await ctx.send("Sorry, something went wrong. Please try again or contact a manager.")
 
 async def main():
     # Initialize all the modules
