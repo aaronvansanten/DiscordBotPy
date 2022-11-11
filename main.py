@@ -35,6 +35,9 @@ async def on_member_join(member):
 async def on_command_error(ctx, error):
     if isinstance(error, commands.errors.CheckFailure):
         await ctx.send('You do not have the correct role for this command.')
+    else:
+        print(f'Ignoring exception in command: {Fore.GREEN}{ctx.command}. {Fore.WHITE} The error stated: {Fore.RED} {error}')
+        await ctx.send("Sorry, something went wrong. Please try again or contact a manager.")
 
 async def main():
     # Initialize all the modules
