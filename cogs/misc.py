@@ -24,7 +24,6 @@ class misc(commands.Cog):
         one, five, fifteen = os.getloadavg()
         load_percentage = int(five / cpu_count * 100)
         await ctx.send(f'Server load is at {load_percentage}%')
-
-
+    
 async def setup(bot: commands.bot):
     await bot.add_cog(misc(bot))
