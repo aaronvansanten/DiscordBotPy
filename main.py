@@ -22,13 +22,13 @@ async def on_ready():
 async def on_member_join(member):
     await member.channel.send(f"Welcome {member.mention} to the discord server.")
 
-@bot.event
-async def on_message(message):
-    print("A message has been sent" + message.content)
-    for word in badWords:
-        if (message.content.lower() == word):
-            await message.delete()  
-            await message.channel.send("Please dont use that word here!")
+# @bot.event
+# async def on_message(message):
+#     print("A message has been sent" + message.content)
+#     for word in badWords:
+#         if (message.content.lower() == word):
+#             await message.delete()  
+#             await message.channel.send("Please dont use that word here!")
 
 """ Event handeler for not havind the correct permissions."""
 @bot.event

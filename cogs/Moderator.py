@@ -21,12 +21,8 @@ class Moderator(commands.Cog):
         if amount == None:
             await ctx.channel.purge(limit=50)
         else:
-            try:
-                int(amount)
-            except: # Error handler
-                await ctx.send('Please enter a valid integer as amount.')
-            else:
-                await ctx.channel.purge(limit=amount)
+            await ctx.channel.purge(limit=amount)
+    
 
 async def setup(bot):
     await bot.add_cog(Moderator(bot))
