@@ -7,8 +7,7 @@ from misc.badWords import badWords
 
 # Retrieve the token from the .env file
 load_dotenv()
-# TOKEN = os.getenv('discord-token')
-TOKEN = "OTc0MjIwMTkxNTU2ODQ5NzA1.Gs9Hfa.BLs6Y4i7kLjuJVuDybTdL9wD6YsfElt2qlGIzw"
+TOKEN = os.getenv('discordToken')
 
 # Initialize the bot
 intents = discord.Intents.all()
