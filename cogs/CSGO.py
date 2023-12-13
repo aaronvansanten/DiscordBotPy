@@ -16,14 +16,16 @@ class CSGO(commands.Cog):
             {Fore.GREEN} {command} {Style.RESET_ALL}')
 
     
-    @commands.command(name="IGL", help="chooses a random IGL from a given list")
+    @commands.command(name="igl", 
+                      help="chooses a random IGL from a given list", 
+                      aliases=["IGL"])
     async def IGL(self, ctx, *args):
         self.__printTerminal(ctx, "IGL")
         await ctx.send(f"{ctx.message.author.name} chose: {random.choice(args)} as the In Game Leader")
     
     @commands.command(name="jumbo", help="Get the enhanced jumbo logos for your game")
     async def jumbo(self, ctx, colour="default"):
-        base_dir = './misc/images/'
+        base_dir = './misc/Images/'
         self.__printTerminal(ctx, "Jumbo")
         if (colour == "blue" or colour == "b"):
             await ctx.channel.send(file=discord.File(base_dir + 'Jumbo Blue.jpg'))
