@@ -16,7 +16,10 @@ class CSGO(commands.Cog):
             {Fore.GREEN} {command} {Style.RESET_ALL}')
 
     
-    @commands.command(name="igl", help="chooses a random IGL from a given list", aliases=["IGL"])
+    @commands.command(name="igl", 
+                      help="chooses a random IGL from a given list", 
+                      usage="A list of names to choose from",
+                      aliases=["IGL"])
     async def IGL(self, ctx, *args):
         self.__printTerminal(ctx, "IGL")
         await ctx.send(f"{ctx.message.author.name} chose: {random.choice(args)} as the In Game Leader")
