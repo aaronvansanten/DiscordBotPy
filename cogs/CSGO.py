@@ -18,7 +18,6 @@ class CSGO(commands.Cog):
     
     @commands.command(name="igl", 
                       help="chooses a random IGL from a given list", 
-                      usage="A list of names to choose from",
                       aliases=["IGL"])
     async def IGL(self, ctx, *args):
         self.__printTerminal(ctx, "IGL")
