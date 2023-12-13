@@ -30,15 +30,15 @@ class CSGO(commands.Cog):
         if (colour == "blue" or colour == "b"):
             await ctx.channel.send(file=discord.File(base_dir + 'Jumbo Blue.jpg'))
         elif (colour == "green" or colour == "g"):
-            await ctx.channel.send(file=discord.File(base_dir + 'Green.jpg'))
+            await ctx.channel.send(file=discord.File(base_dir + 'Jumbo Green.jpg'))
         elif (colour == "orange" or colour == "o"):
-            await ctx.channel.send(file=discord.File(base_dir + 'Orange.jpg'))
+            await ctx.channel.send(file=discord.File(base_dir + 'Jumbo Orange.jpg'))
         elif (colour == "purple" or colour == "p"):
-            await ctx.channel.send(file=discord.File(base_dir + 'Purple.jpg'))
+            await ctx.channel.send(file=discord.File(base_dir + 'Jumbo Purple.jpg'))
         elif (colour == "yellow" or colour == "y"):
-            await ctx.channel.send(file=discord.File(base_dir + 'Yellow.jpg'))
+            await ctx.channel.send(file=discord.File(base_dir + 'Jumbo Yellow.jpg'))
         elif (colour == "default"):
-            await ctx.channel.send(file=discord.File(base_dir + 'Original.jpg'))
+            await ctx.channel.send(file=discord.File(base_dir + 'Jumbo Original.jpg'))
 
     @commands.command(name="gangpad", help="Get a random gangpad for your game")
     async def gangpad(self, ctx):
